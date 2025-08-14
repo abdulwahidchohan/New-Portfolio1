@@ -60,7 +60,7 @@ html {
   }
 }
 
-body {
+  body {
   font-feature-settings: "rlig" 1, "calt" 1;
   background-color: var(--background-color);
   color: var(--text-color);
@@ -159,6 +159,66 @@ button, a {
   }
 }
 
+/* Modern 2025 Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(100, 255, 218, 0.6);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
 /* Optimized scroll animations */
 .animate-on-scroll {
   opacity: 0;
@@ -170,6 +230,33 @@ button, a {
 .animate-on-scroll.animate {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Modern Animation Classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background: linear-gradient(-45deg, #64ffda, #4fd1c7, #38bdf8, #818cf8);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animate-morph {
+  animation: morph 8s ease-in-out infinite;
 }
 
 /* Responsive grid with better performance */
@@ -385,3 +472,151 @@ button, a {
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
 }
+
+/* Modern 2025 Effects */
+.neon-glow {
+  text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+}
+
+.holographic {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #54a0ff);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.magnetic {
+  transition: transform 0.2s ease;
+}
+
+.magnetic:hover {
+  transform: scale(1.05);
+}
+
+.liquid {
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.liquid:hover::before {
+  left: 100%;
+}
+
+/* AI-Powered Effects */
+.ai-highlight {
+  background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: gradient-shift 2s ease infinite;
+}
+
+.personalized {
+  border: 2px solid transparent;
+  background: linear-gradient(var(--background-color), var(--background-color)) padding-box,
+              linear-gradient(45deg, var(--primary-color), #4fd1c7) border-box;
+}
+
+/* Voice Interface Styles */
+.voice-active {
+  animation: pulse-glow 1s ease-in-out infinite;
+}
+
+.voice-listening {
+  background: radial-gradient(circle, rgba(100, 255, 218, 0.3) 0%, transparent 70%);
+  animation: pulse-glow 0.5s ease-in-out infinite;
+}
+
+/* AR/VR Ready Styles */
+.ar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.ar-marker {
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Micro-interactions */
+.micro-hover {
+  transition: all 0.1s ease;
+}
+
+.micro-hover:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+.micro-click {
+  transition: all 0.05s ease;
+}
+
+.micro-click:active {
+  transform: scale(0.98);
+}
+
+/* Sustainable Design */
+.eco-friendly {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.eco-friendly:hover {
+  filter: brightness(1) contrast(1);
+}
+
+/* Accessibility Enhancements */
+.focus-ring {
+  position: relative;
+}
+
+.focus-ring:focus-visible::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--primary-color);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Modern Loading States */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.loading-pulse {
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+.loading-spin {
+  animation: spin-slow 1s linear infinite;
+}
+
+/* Responsive Typography Scale */
+.text-responsive-xs { font-size: clamp(0.75rem, 1.5vw, 0.875rem); }
+.text-responsive-sm { font-size: clamp(0.875rem, 2vw, 1rem); }
+.text-responsive-base { font-size: clamp(1rem, 2.5vw, 1.125rem); }
+.text-responsive-lg { font-size: clamp(1.125rem, 3vw, 1.25rem); }
+.text-responsive-xl { font-size: clamp(1.25rem, 3.5vw, 1.5rem); }
+.text-responsive-2xl { font-size: clamp(1.5rem, 4vw, 2rem); }
+.text-responsive-3xl { font-size: clamp(2rem, 5vw, 3rem); }
+.text-responsive-4xl { font-size: clamp(3rem, 6vw, 4rem); }
+.text-responsive-5xl { font-size: clamp(4rem, 7vw, 5rem); }
